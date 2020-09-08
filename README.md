@@ -59,6 +59,19 @@ head, err := md.ParseHead(f)
 
 ```golang
 
+type MdHead struct {
+	Title       string
+	Urlid       string
+	Overview    string
+	Cate        string
+	Lang        string
+	Tags        []string
+	Image       string
+	PublishedAt time.Time
+	UpdatedAt   time.Time
+	Extra       map[string]string
+}
+
 func Parse(r io.Reader) (head MdHead, body []byte, error);
 
 func ParseHead(r io.Reader) (head MdHead, error);
